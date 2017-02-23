@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "WorklightSample", "WorklightSample.shproj", "{6D9B7318-FC5A-4A96-9740-1D8BAF49663C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorklightSample.Android", "Android\WorklightSample.Android.csproj", "{2B89DA8E-279A-410C-AC16-FB6AF2C4F7FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B89DA8E-279A-410C-AC16-FB6AF2C4F7FE}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{2B89DA8E-279A-410C-AC16-FB6AF2C4F7FE}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{2B89DA8E-279A-410C-AC16-FB6AF2C4F7FE}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{2B89DA8E-279A-410C-AC16-FB6AF2C4F7FE}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{2B89DA8E-279A-410C-AC16-FB6AF2C4F7FE}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{2B89DA8E-279A-410C-AC16-FB6AF2C4F7FE}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{2B89DA8E-279A-410C-AC16-FB6AF2C4F7FE}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{2B89DA8E-279A-410C-AC16-FB6AF2C4F7FE}.Release|iPhone.Build.0 = Release|Any CPU
+		{2B89DA8E-279A-410C-AC16-FB6AF2C4F7FE}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{2B89DA8E-279A-410C-AC16-FB6AF2C4F7FE}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{2B89DA8E-279A-410C-AC16-FB6AF2C4F7FE}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{2B89DA8E-279A-410C-AC16-FB6AF2C4F7FE}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{2B89DA8E-279A-410C-AC16-FB6AF2C4F7FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B89DA8E-279A-410C-AC16-FB6AF2C4F7FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B89DA8E-279A-410C-AC16-FB6AF2C4F7FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B89DA8E-279A-410C-AC16-FB6AF2C4F7FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = None
+		$1.ResourceNamePolicy = FileFormatDefault
+		$0.StandardHeader = $2
+		$2.Text = 
+		$2.IncludeInNewFiles = True
+		version = 7.1.0.0
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+EndGlobal

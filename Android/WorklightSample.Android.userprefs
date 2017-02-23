@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{2B89DA8E-279A-410C-AC16-FB6AF2C4F7FE}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WorklightSample.Android" expanded="True">
+            <Node name="WorklightSample.Android" expanded="True" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.WorklightSample.Android PreferredExecutionTarget="Android.00c2bea45e935103" />
+</Properties>
