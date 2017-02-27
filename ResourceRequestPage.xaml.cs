@@ -8,8 +8,7 @@ namespace WorklightSample
 	public partial class ResourceRequestPage : ContentPage
 	{
 
-		private static StackLayout layout = null;
-		private static StackLayout balancelayoutpanel = null;
+
 		private DataPowerChallengeHandler datapowerChallengeHandler = null;
 		
 		
@@ -17,60 +16,16 @@ namespace WorklightSample
 		{
 			InitializeComponent();
 			getbalance.Clicked += OnGetBalanceButtonClicked;
-			login.Clicked += OnLoginClicked;
-			cancel.Clicked += OnCancelClicked;
-			layout = loginlayout;
-			balancelayoutpanel = balancelayout;
 			datapowerChallengeHandler = DataPowerChallengeHandler.GetInstance();
+			datapowerChallengeHandler.BackPage = this;
 			App.WorklightClient.client.RegisterChallengeHandler(datapowerChallengeHandler);
 		}
 
-	void OnCancelClicked(object sender, EventArgs e)
-	{
-			datapowerChallengeHandler.SetSubmitCancelled();
-			ShowLoginLayout(false);
-			ShowBalanceLayout(true);
-			progresstext.IsVisible = false;
-			getbalance.IsEnabled = true;
-
-	}
-
-		public static void ShowLoginLayout(bool visible)
-		{
-
-
-
-			Device.BeginInvokeOnMainThread(() =>
-		   {
-			   layout.IsVisible = visible;
-			
-
-   			});
-		}
-
-		public static void ShowBalanceLayout(bool visible)
-		{
-			
-			Device.BeginInvokeOnMainThread(() =>
-		   {
-				balancelayoutpanel.IsVisible = visible;
-
-
-		   });
-		}
-
-	void OnLoginClicked(object sender, EventArgs e)
-	{
-			
-			datapowerChallengeHandler.SubmitLogin(UserName.Text, Password.Text);
-			ShowLoginLayout(false);
-			ShowBalanceLayout(true);
-		
-		}
+	
 
 		async void  OnGetBalanceButtonClicked(object sender, EventArgs e)
 		{
-			getbalance.IsEnabled = false;
+		//	getbalance.IsEnabled = false;
 			balancetext.Text = "";
 			progresstext.IsVisible = true;
 			var result = await App.WorklightClient.ProtectedInvokeAsync();
@@ -78,8 +33,5 @@ namespace WorklightSample
 			balancetext.Text = result.Response;
 			getbalance.IsEnabled = true;	
 		}
-
-
-
 	}
 }

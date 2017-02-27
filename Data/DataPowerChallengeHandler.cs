@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using Newtonsoft.Json.Linq;
 using Worklight;
-
+using Xamarin.Forms;
 
 namespace WorklightSample
 {
@@ -12,7 +12,8 @@ namespace WorklightSample
 		private static String securityCheckName = "LtpaBasedSSO";
 		private static DataPowerChallengeHandler ourInstance = new DataPowerChallengeHandler(securityCheckName);
 		private Dictionary<String, String> parms;
-		public static ManualResetEvent waitForPincode = new ManualResetEvent(false);
+		public static ManualResetEvent waitForLoginChallenge = new ManualResetEvent(false);
+	
 
 		public static DataPowerChallengeHandler GetInstance()
 		{
@@ -41,6 +42,12 @@ namespace WorklightSample
 		}
 
 
+		public Page BackPage
+		{
+			get;
+			set;
+		}
+
 		public void SubmitLogin(String userName, String password)
 		{	
 			parms = new Dictionary<string, string>();
@@ -51,7 +58,7 @@ namespace WorklightSample
 			SubmitSuccess = true;
 			//ResourceRequestPage.ShowLoginLayout(true);
 			//ResourceRequestPage.ShowBalanceLayout(false);
-			waitForPincode.Set();
+			waitForLoginChallenge.Set();
 
 		}
 
@@ -85,10 +92,17 @@ namespace WorklightSample
 
 		public override void HandleChallenge(WorklightResponse challenge)
 		{
-			waitForPincode.Reset();
-			ResourceRequestPage.ShowLoginLayout(true);
-			ResourceRequestPage.ShowBalanceLayout(false);
-			waitForPincode.WaitOne();
+			waitForLoginChallenge.Reset();
+
+			Device.BeginInvokeOnMainThread(() =>
+		   {
+				App.Current.MainPage = new NavigationPage(new LoginPage(BackPage));
+
+		   });
+
+			//ResourceRequestPage.ShowLoginLayout(true);
+			//ResourceRequestPage.ShowBalanceLayout(false);
+			waitForLoginChallenge.WaitOne();
 		}
 
 		public override void OnFailure(WorklightResponse response)
@@ -110,7 +124,7 @@ namespace WorklightSample
 		public void SetSubmitCancelled()
 		{
 			SubmitSuccess = false; 
-			waitForPincode.Set();
+			waitForLoginChallenge.Set();
 		}
 			
 
